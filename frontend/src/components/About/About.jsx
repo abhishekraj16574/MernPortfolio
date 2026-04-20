@@ -6,23 +6,23 @@ const About = ({ about }) => {
   return (
     <div className="about">
       <div className="aboutContainer">
-        <Typography>{about.quote}</Typography>
+        <Typography>{about?.quote}</Typography>
       </div>
       <div className="aboutContainer2">
         <div>
-          <img src={about.avatar.url} alt="Abhi" className="aboutAvatar" />
+          <img src={about?.avatar?.url} alt="Abhi" className="aboutAvatar" />
 
           <Typography
             variant="h4"
             style={{ margin: "1vmax 0", color: "black" }}
           >
-            {about.name}
+            {about?.name}
           </Typography>
 
-          <Typography>{about.title}</Typography>
+          <Typography>{about?.title}</Typography>
 
           <Typography style={{ margin: "1vmax 0", textAlign: "center" }}>
-            {about.subtitle}
+            {about?.subtitle}
           </Typography>
         </div>
 
@@ -35,7 +35,7 @@ const About = ({ about }) => {
               textAlign: "right",
             }}
           >
-            {about.description}
+            {about?.description}
           </Typography>
         </div>
       </div>
