@@ -243,7 +243,10 @@ export const updateUser = async (req, res) => {
       }
 
       if (about.avatar) {
-        await cloudinary.v2.uploader.destroy(user.about.avatar.public_id);
+        if(user.about.avatar?.public_id){
+             await cloudinary.v2.uploader.destroy(user.about.avatar.public_id);
+        }
+        
 
         const myCloud = await cloudinary.v2.uploader.upload(about.avatar, {
           folder: "portfolio",
@@ -254,6 +257,7 @@ export const updateUser = async (req, res) => {
           url: myCloud.secure_url,
         };
       }
+
     }
 
     await user.save();
