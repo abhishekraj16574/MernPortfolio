@@ -23,6 +23,7 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         expires: new Date(Date.now() + 600000),
         httpOnly: true,
+        sameSite: "lax",   
       })
       .json({
         success: true,

@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { connectDatabase } from "./config/database.js";
 import cloudinary from "cloudinary";
 
+const PORT = process.env.PORT || 4000;
 dotenv.config({ path: "./backend/config/config.env" });
 
 connectDatabase();
@@ -13,6 +14,6 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port: ${process.env.PORT} `);
 });
